@@ -1,20 +1,16 @@
 version: "3"
-
 services:
   mawaqit-api:
     image: mrsofiane/mawaqit-api:latest
     ports:
       - "80:80"
+    environment:
+      - REDIS_URI=redis://mawaqit-api-redis:6379
+      - USE_REDIS=true
     depends_on:
       - mawaqit-api-redis
-    environment:
-      - REDIS_URI=redis://default:AlgjAAIgcDHaXFFIC61XFs1CTIT61sjoHUFG20svV-MI34ilSGMu-Q@divine-rodent-22563.upstash.io:6379
-      - USE_REDIS=true
-
   mawaqit-api-redis:
     image: redis:alpine3.18
     ports:
       - "6379:6379"
-
-
       
