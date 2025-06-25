@@ -7,4 +7,3 @@ class PrayerTimes(BaseModel):
     asr: str
     maghreb: str
     icha: str
-
